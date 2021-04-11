@@ -1,20 +1,21 @@
-import React, {useEffect} from 'react';
-import {StyleSheet} from 'react-native';
+import React, { useEffect } from 'react';
+import { StyleSheet } from 'react-native';
 import {
   Container,
   Header,
   View,
-  Button,
   Text,
   Content,
   Form,
   Item,
-  Input,
   Label,
 } from 'native-base';
-import {useSelector, useDispatch} from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import * as loginActions from '../../action-reducer/login/loginActions';
-function Login({navigation}) {
+import Input from '../../components/Input/index'
+import Button from '../../components/Button/index'
+
+function Login({ navigation }) {
   const login = useSelector((state) => state.login.login);
   const dispatch = useDispatch();
   console.log('s-s-s>>>>>>>>>>>logigngn>>>>>>', login);
@@ -26,41 +27,33 @@ function Login({navigation}) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [login]);
   return (
-    <Container>
-      <Content contentContainerStyle={styles.content}>
-        <Form>
-          <Item fixedLabel>
-            <Label>Username</Label>
-            <Input />
-          </Item>
-          <Item fixedLabel last>
-            <Label>Password</Label>
-            <Input />
-          </Item>
-        </Form>
-        <View
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <View style={{ width: '90%' }}>
+        <Input placeholder="UID/Email/Phone" />
+        <Input placeholder="PIN" itemStyle={{ marginTop: 10 }} />
+      </View>
+      <View
+        // eslint-disable-next-line react-native/no-inline-styles
+        style={{
+          width: '100%',
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'center',
+          marginTop: 20,
+        }}>
+        <Button
+          onPress={() => {}}
           // eslint-disable-next-line react-native/no-inline-styles
-          style={{
-            width: '100%',
-            flexDirection: 'row',
+          buttonStyle={{
+            width: '80%',
             alignItems: 'center',
             justifyContent: 'center',
-            marginTop: 20,
-          }}>
-          <Button
-            onPress={() => dispatch(loginActions.LoginaAction(true))}
-            // eslint-disable-next-line react-native/no-inline-styles
-            style={{
-              width: '80%',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-            primary>
-            <Text> Login </Text>
-          </Button>
-        </View>
-      </Content>
-    </Container>
+          }}
+          buttonText='Login'
+          >
+        </Button>
+      </View>
+    </View>
   );
 }
 
@@ -69,6 +62,7 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     justifyContent: 'center',
+    width: '90%',
   },
   form: {
     width: '100%',
