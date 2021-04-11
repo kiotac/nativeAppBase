@@ -129,7 +129,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.nativeappbase"
+        applicationId "com.kinlegacy"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

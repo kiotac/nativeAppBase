@@ -1,5 +1,5 @@
 {
-  "name": "nativeAppBase",
+  "name": "kinlegacy",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -10,13 +10,13 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "react": "16.13.1",
-    "react-native": "0.63.2",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/bottom-tabs": "^5.7.3",
     "@react-navigation/native": "^5.7.2",
     "@react-navigation/stack": "^5.8.0",
     "native-base": "^2.13.13",
+    "react": "17.0.1",
+    "react-native": "0.64.0",
     "react-native-gesture-handler": "^1.7.0",
     "react-native-linear-gradient": "^2.5.6",
     "react-native-reanimated": "^1.10.1",
